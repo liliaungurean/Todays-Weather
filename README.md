@@ -1,6 +1,6 @@
 # Todays-Weather
 
-## description
+## Description
 this was created to let the use search for a city and get the weather of the current day and a 5 day forecast. It allows the user to get the temperature, wind speed and humidity.
 
 ## Table of contents: 
