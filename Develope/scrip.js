@@ -61,6 +61,40 @@ $(document).ready(function(){
             
                $("#previousSearches").empty();
     
+                var holder= response.list[0];
+    
+                            $(".currentCity").html("<h3>" + response.city.name + " " + date_format(holder) + "</h3>").append(
+                                $('<img src=" '+ "http://openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@2x.png" +' "/>')); 
+                            $(".humidity").text("Humidity: " + holder.main.humidity + " %");
+                            $(".windSpeed").text("Wind Speed: " + holder.wind.speed + " mph");
+                            $(".temperature").text(temp_trans(holder));
+                            currentCity(response.city.coord.lat, response.city.coord.lon);
+    
+                        
+                        for(i=1; i<=5; i++){
+                        holder= response.list[(i*8)-1];
+                      
+                        $("#"+ i + "dayForecast").text(date_format(holder));
+                        $("#"+ i + "dayIcon").empty().append($('<img src=" '+ "http://openweathermap.org/img/wn/"+holder.weather[0].icon+".png" +' "/>'));
+                        $("#"+ i + "dayHumidity").text("Humidity: " + holder.main.humidity + " %");
+                        $("#"+ i + "dayTemperature").text(temp_trans(holder));
+                        $("#" + i + "windSpeed").text("Wind: " + holder.wind.speed + " mph");
+    
+                        }
+                  }
+            });           
+    } 
+    
+    
+    function currentCity(lat,long) {  
+                 
 
+        var queryURL = "https://api.openweathermap.org/data/2.5/onecall?" + "&lat=" + lat + "&lon=" + long + "&appid=" + apiKey;
+    
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+        } 
     getWeather("");
     });  
