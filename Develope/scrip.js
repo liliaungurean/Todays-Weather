@@ -69,6 +69,7 @@ $(document).ready(function(){
     
                 var holder= response.list[0];
                 
+                
     //current weather
                             $(".currentCity").html("<h3>" + response.city.name + " " + date_format(holder) + "</h3>").append(
                                 $('<img src=" '+ "http://openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@2x.png" +' "/>')); 
