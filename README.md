@@ -9,10 +9,10 @@ this was created to let the use search for a city and get the weather of the cur
 - [ ] Credits
 - [ ] How to contribute 
 
-##Installation: 
+## Installation: 
 There are no requirements for installation for this project. All that is needed to be done is open the page in a desired web browser. 
 
-##Usage.
+## Usagw:
 When you open the website you should be provided with a search button that allows you to search for the city and get the current weather. 
 
 ## Credits 
